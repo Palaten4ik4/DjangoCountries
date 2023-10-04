@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Countries</title>
+    {% load static %}  <!-- Загрузка статических файлов -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> <!-- Подключение файла стилей -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to Django Countries</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'country_list' %}">Countries</a></li>
+                <!-- Дополнительные ссылки по мере необходимости -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Содержимое будет вставлено здесь -->
+        {% endblock content %}
+    </main>
+
+    <footer>
+        Django Countries &copy; 2023
+    </footer>
+</body>
+</html>

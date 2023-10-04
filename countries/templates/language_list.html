@@ -1,0 +1,12 @@
+<!-- countries/templates/language_list.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Languages List</h2>
+    <ul>
+        {% for language in languages %}
+        <li><a href="{% url 'countries_by_language' language_name=language %}">{{ language }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
